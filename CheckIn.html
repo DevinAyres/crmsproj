@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CRMS</title>
+  <meta charset="utf-8" />
+  <link rel = "stylesheet" href="style.css" />
+  
+  <!--<link rel = "stylesheet" href="bootstrap.css" /> -->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+
+<body>
+  <header>
+    <div class = "nav">
+      <ul>
+	    <li> <a href="Index.html">Home</a> </li>
+		<li> <a href="AddStudent.html">Add Student</a> </li>
+		<li> <a href="Search.php">Search Student</a> </li>
+		<li> <a class="active" href="CheckIn.html">Check-In</a> </li>
+		<li> <a href="Help.html">Help</a> </li>
+	  </ul>
+	</div>
+	<h1>Appointments</h1>
+  </header>
+  
+  <div class="app">
+    <table id="appointments">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+		  <th>Advisor</th>
+		  <th class="reason">Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4/1/17 1pm - 2pm</td>
+          <td>Anna Smith</td>
+		  <td>Tony Hawk</td>
+		  <td>Homework help.</td>
+        </tr>
+        <tr>
+          <td>4/1/17 3pm - 4pm</td>
+          <td>Debbie Sloan</td>
+		  <td>Oliver Queen</td>
+		  <td>Advising</td>
+        </tr>
+        <tr>
+          <td>4/2/17 8am - 9am</td>
+          <td>John Daniels</td>
+		  <td>Felicity Smoke</td>
+		  <td></td>
+        </tr>
+		<tr>
+          <td>4/3/17 9am - 10am</td>
+          <td>Jackie Sullivan</td>
+		  <td>John Diggles</td>
+		  <td></td>
+        </tr>
+		<tr>
+          <td></br></td>
+          <td></td>
+		  <td></td>
+		  <td></td>
+        </tr>
+		<tr>
+          <td></br></td>
+          <td></td>
+		  <td></td>
+		  <td></td>
+        </tr>
+		<tr>
+          <td></br></td>
+          <td></td>
+		  <td></td>
+		  <td></td>
+        </tr>
+		<tr>
+          <td></br></td>
+          <td></td>
+		  <td></td>
+		  <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </br>
+  <div class="col2">
+  <div class="buttons">
+    <form id ="redirect" method ="post" action ="AddAppointment.php">
+      <button class="button">Add</button>
+	</form>
+	  <button class="button">Delete</button>
+	  <button class="button">Check in</button>
+	  <button class="button">Edit Appointment</button>
+  </div>
+  </div>
+  
+</body>
+
+</html>

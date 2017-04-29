@@ -1,0 +1,218 @@
+* {
+  color: #1a1a1a;
+  font-family: "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  border-style: none;
+  border-width:  0px;
+  position: static;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("grafient.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;*/
+}
+
+.nav ul {
+  background-color: #23315c;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  padding-left: 0;
+  font-weight: bold;
+  color: #f2f2f2;
+  transition: 0.3s background-color, 1s color;
+}
+
+
+.nav a:hover {
+  background-color: #3f5ba6;
+  color: #f2f2f2;
+}
+
+.nav a.active {
+  background-color: #ffd633;
+  color: #000000;
+  font-weight: normal;
+  cursor: default;
+}
+
+.nav a.active:hover {
+  background-color: #ffe680;
+  color: #000000;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 650px) {
+  .nav li {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.0em;
+    display: inline-block;
+    margin-right: -4px;
+	text-align: center;
+  } 
+}
+
+.col {
+  padding: 15px;
+  margin: auto;
+  width: 100%;
+  column-count: 2;
+  text-align: left;
+  font-size:  1.5em;
+}
+
+.col2 {
+  padding: 15px;
+  margin: auto;
+  width: 100%;
+  column-count: 4;
+  text-align: left;
+  font-size:  1.5em;
+}
+
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #1c284a;
+}
+
+#form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.app {
+  padding: 15px;
+}
+
+.reason {
+  width: 75%;
+}
+
+.outline {
+  padding: 15px;
+  margin: auto;
+  width: 95%;
+}
+
+#profile {
+  border-collapse: collapse;
+  border: 5px solid #151e37;
+  margin: auto%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#profile  td{
+  padding: 11px;
+  text-align: left;
+}
+#profile th{
+  border-bottom: 5px solid #151e37;
+  padding: 15px;
+  background-color: #23315c;
+  color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+
+.records {
+  border-right: 5px solid #151e37;
+}
+.records:hover {
+  background-color: #ffff99;
+}
+
+.tags {
+  
+}
+
+.tags:hover {
+  background-color: #ffff99;
+}
+
+#appointments {
+  border-collapse: collapse;
+  border: 1px solid #23315c;
+}
+#appointments td{
+  padding:11px;
+  border: 1px solid #ffff99;
+  text-align: left;
+}
+#appointments th{
+  padding: 15px;
+  background-color: #23315c;
+  color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+#appointments tr:hover {
+  background-color: #ffff99;
+}
+
+ tr:nth-child(even){
+  background-color: #ffffb3
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffe6
+}
+
+.button {
+  padding: 21px 35px;
+  cursor: pointer;
+  background-color: #23315c;
+  color: #f2f2f2;
+  font-weight: bold;
+  border-radius: 10px;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #151e37;
+}
+
+.buttons {
+  padding: 0px;
+  word-spacing: 10px;
+  text-align: center;
+}

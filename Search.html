@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CRMS</title>
+  <meta charset="utf-8" />
+  <link rel = "stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class = "nav">
+      <ul>
+	    <li> <a href="Index.html">Home</a> </li>
+		<li> <a href="AddStudent.html">Add Student</a> </li>
+		<li> <a class="active" href="Search.php">Search Student</a> </li>
+		<li> <a href="CheckIn.html">Check-In</a> </li>
+		<li> <a href="Help.html">Help</a> </li>
+	  </ul>
+	</div>
+	<h1>Search By</h1>
+  </header>
+  
+  <div id="form">
+    <form action="/action_page.php">
+      <label for="fname"><h2>Student's Name</h2>
+	  First, Last, or partial name accepted
+	  </label>
+      <input type="text" id="fname" name="firstname" placeholder="Name..">
+
+	  </br>
+	  <h3>and/or</h3>
+	  
+	  <label for="idnum"><h2>ID Number</h2>Please provide the whole number</label>
+	  <input type="text" id="idnum" name="idnumber" placeholder="ID number..">
+  
+      <input type="submit" value="Submit">
+    
+	</form>
+  </div>
+  
+  
+</body>
+
+</html>
