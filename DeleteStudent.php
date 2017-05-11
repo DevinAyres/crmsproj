@@ -29,6 +29,8 @@ $smt = $db->prepare("Delete from MasterList where ID = :id");
 if ($smt->execute(array(':id' => $_POST['id'])))
 echo "Student Deleted";
 
+$smt = $db->prepare("Delete from Appointments where ID = :id");
+$smt->execute(array(':id' => $_POST['id']));
 }
 
 ?>

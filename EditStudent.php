@@ -50,12 +50,12 @@ $results = $smt->fetch();
   </div>
 </header>
 
-<form action ="AddStudent.php" method="POST">
+<form action ="AddStudent.php" method="POST" onkeypress ="return event.keyCode !=13;">
       <p>
           <div class="col">
         ID: <input type ="text" name ="id" placeholder="id.." value=<?php echo $results['ID'];?>><br>
-        Last Name: <input type ="text" name ="lastName" placeholder="last name.." value =<?php echo $results['LastName'];?>><br>
-        First Name: <input type ="text" name ="firstName" placeholder="first name.." value =<?php echo $results['FirstName'];?>><br>
+        Last Name: <input type ="text" name ="lastName" placeholder="last name.." value ="<?php echo $results['LastName'];?>"><br>
+        First Name: <input type ="text" name ="firstName" placeholder="first name.." value ="<?php echo $results['FirstName'];?>"><br>
         Class Year: <input type ="text" name ="year" placeholder="FR/SO/JR/SR.." value =<?php echo $results['ClassYear'];?>><br>
         PER Planned Grad Semester: <input type ="text" name ="grad" placeholder="semester.." value =<?php echo $results['PER_PlannedGradSemester'];?>><br>
         School: <input type="text" name ="school" placeholder="school.." value =<?php echo $results['School'];?>><br>
@@ -68,10 +68,10 @@ $results = $smt->fetch();
         Bursar FinAid Involvement: <input type ="text" name ="finAid" placeholder="Y/N/M.."  value =<?php echo $results['BursarFinAidInvolvement'];?>><br>
         Holds: <input type ="text" name ="holds" placeholder="Y/N.."  value =<?php echo $results['Holds'];?>><br>
         Returning: <input type ="text" name="returning" placeholder="Y/N/M.."  value =<?php echo $results['Returning'];?>><br>
-        School Contact Person: <input type ="text" name ="contact" placeholder="name.."  value =<?php echo $results['SchoolContactPerson'];?>><br>
+        School Contact Person: <input type ="text" name ="contact" placeholder="name.."  value ="<?php echo $results['SchoolContactPerson'];?>"><br>
         School Contact Made: <input type ="text" name ="contactMade" placeholder="Y/N.."  value =<?php echo $results['SchoolContactMade'];?>><br>
         Other RIT Contact Made: <input type ="text" name ="ritContact" placeholder="Y/N.."  value =<?php echo $results['OtherRITContactMade'];?>><br>
-        Notes: <input type ="text" name = "notes" placeholder="notes.."  value =<?php echo $results['Notes'];?>><br>
+        Notes: <input type ="text" name = "notes" placeholder="notes.."  value ="<?php echo $results['Notes'];?>"><br>
         CARE Indicate Want to Transfer WD: <input type ="text" name ="transfer" placeholder="Y/N.."  value =<?php echo $results['CARE_IndicateWantToTransferWD'];?>><br>
         Withdrawn WD Date: <input type ="text" name ="withdrawn" placeholder="date/N.."  value =<?php echo $results['WithdrawnWD_Date'];?>><br>
         Fall Registered Hours: <input type ="text" name ="fallHours" placeholder="hours.."  value =<?php echo $results['FallRegHours'];?>><br>
@@ -86,7 +86,7 @@ $results = $smt->fetch();
         Financial Hold: <input type ="text" name ="financialHold" placeholder="Y/N.."  value =<?php echo $results['FinancialHold'];?>><br>
         Payment Plan Hold: <input type ="text" name ="paymentHold" placeholder="Y/N.."  value =<?php echo $results['PaymentPlanHold'];?>><br>
         Health Service Hold: <input type ="text" name ="healthHold" placeholder="Y/N.."  value =<?php echo $results['HealthServiceHold'];?>><br>
-        PER Advisor Full Name: <input type ="text" name ="advisor" placeholder="name.."  value =<?php echo $results['PER_AdvisorFullname'];?>><br>
+        PER Advisor Full Name: <input type ="text" name ="advisor" placeholder="name.."  value ="<?php echo $results['PER_AdvisorFullname'];?>"><br>
         Advisor Email: <input type ="text" name ="advisorEmail" placeholder="email.." value =<?php echo $results['AdvisorEmail'];?>><br>
         Student Email: <input type ="text" name ="studentEmail" placeholder="email.." value =<?php echo $results['StudentEmail'];?>><br>
         Permanent Address Phone: <input type ="text" name ="homePhone" placeholder="number.." value =<?php echo $results['PermanentAddressPhone'];?>><br>
@@ -95,9 +95,12 @@ $results = $smt->fetch();
         Dorm: <input type ="text" name ="dorm" placeholder="dorm name.." value =<?php echo $results['Dorm'];?>><br>
         Room Number: <input type ="text" name ="roomNumber" placeholder="room number.." value =<?php echo $results['RoomNumber'];?>><br>
         LLC: <input type ="text" name ="llc" placeholder="Y/N.." value =<?php echo $results['LLC'];?>><br>
+	Spring Registered Hours: <input type ="text" name ="spring" placeholder="hours.." value =<?php echo $results['SpringRegHours'];?>><br>
+        Academic Standing: <input type ="text" name ="standing" placeholder="standing" value ="<?php echo $results['AcademicStanding'];?>"><br>
+        Admin Mentor: <input type ="text" name ="admin" placeholder="admin name..." value ="<?php echo $results['Admin'];?>"><br>
 	<input type ="hidden" name ="realID" value = <?php echo 
 $_POST['id'];?>>
-<button type='submit' name = 'id' value = {$result['ID']}> </button>
+<button type='submit' name = 'id' value = <?php echo $result['ID'];?>> </button>
         <input type ="submit" name ="submit" value ="Edit">
           </div>
       </p>

@@ -40,6 +40,7 @@ $result = $smt->fetch();
         Date: <input type ="text" name ="date" value ="<?php echo $result['Date'];?>"><br>
 	Reason: <input type ="text" name ="reason" value ="<?php echo $result['Reason'];?>"> <br> 
 	<input type ="hidden" name ="checked" value =<?php echo $result['checked'];?>>
+	<input type ="hidden" name ="realDate" value =<?php echo $result['Date'];?>>
 	<input type ='submit' name ='protocol' value ='edit'>
 	</p>
 </form>

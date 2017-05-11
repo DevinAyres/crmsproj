@@ -1,4 +1,9 @@
 <?php
+	include ("Session.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<?php
 try
 {
 $db = new PDO('sqlite:db/CRMS.db');
@@ -8,7 +13,7 @@ catch (PDOException $e)
 print($e->getMessage());
 }
 
-$smt = $db->prepare("Select * from Appointments order by Date asc");
+$smt = $db->prepare("Select * from Appointments where Show is null order by Date asc");
 
 $smt->execute();
 
@@ -17,10 +22,9 @@ $results = $smt->fetchall();
 if ($_POST['protocol'] === 'delete')
 {
 $idDate = explode('|', $_POST['idNumber']);
-$smt4 = $db->prepare("Delete from Appointments where ID = :id and Date = :date");
+$smt4 = $db->prepare("delete from Appointments where ID = :id and Date = :date");
 $smt4->execute(array(':id'=> $idDate[0], ':date'=> $idDate[1]));
 header("Refresh:0");
-print_r($idDate);
 }
 else if($_POST['protocol'] === 'checkIn')
 {
@@ -54,23 +58,17 @@ echo "<td><input type ='checkbox' disabled readonly></td></tr>";
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <title>CRMS</title>
   <meta charset="utf-8" />
   <link rel = "stylesheet" href="style.css" />
-  
-  <!--<link rel = "stylesheet" href="bootstrap.css" /> -->
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 </head>
 
 <script>
 function setID()
 {
 document.getElementById('idButton').value = document.querySelector('input[name="idNumber"]:checked').value;
+document.getElementById('idButton2').value = document.querySelector('input[name="idNumber"]:checked').value;
 }
 </script>
 
@@ -78,11 +76,14 @@ document.getElementById('idButton').value = document.querySelector('input[name="
   <header>
     <div class = "nav">
       <ul>	
-	    <li> <a href="Index.html">Home</a> </li>
-		<li> <a href="AddStudent.html">Add Student</a> </li>
+	    <li> <a href="Home.php">Home</a> </li>
+		<li> <a href="Add.php">Add Student</a> </li>
 		<li> <a href="Search.php">Search Student</a> </li>
-		<li> <a class="active" href="CheckIn.html">Check-In</a> </li>
-		<li> <a href="Help.html">Help</a> </li>
+		<li> <a class="active" href="CheckIn.php">Check-In</a> </li>
+		<li> <a href="ManageAccounts.php">Manage Accounts</a> </li>
+		<li> <a href="Help.php">Help</a> </li>
+		<li class="floatme"> <form method="post"><button class="navbutton" type ="submit" formaction = "LogOut.php">Log Out</button></form></li>
+		  <li class="floatme"><form method="post"><button class="navbutton2" type ="submit" formaction = "ChangePass.php">Change Password</button></form></li>
 	  </ul>
 	</div>
 	<h1>Appointments</h1>
@@ -108,11 +109,14 @@ document.getElementById('idButton').value = document.querySelector('input[name="
   </br>
   <div class="col2">
 	<button class ="button" name ="protocol" value="checkIn">Check in</button>
-	<button class="button" name ="protocol" value="delete">Delete</button>
+	<button class="button" name ="protocol" value="delete">Cancel</button>
     <button class="button" name ="protocol" value="add">Add</button>
 	</form>
 	<form id ="edit" method ="post" action ="EditAppointment.php">  
 	  <button type ="submit" class="button" id ="idButton" name ="idButton" value="">Edit Appointment</button>
+    </form>
+<form id ="addnote" method ="post" action ="AddNote.php">
+          <button type ="submit" class="button" id ="idButton2" name ="idButton2" value="">Add Note</button>
     </form>
   </div>
   

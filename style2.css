@@ -1,6 +1,6 @@
 * {
   color: #1a1a1a;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: bold;
   font-variant: normal;
@@ -22,15 +22,14 @@ body {
 .nav ul {
   background-color: #23315c;
   text-align: left;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 .nav a {
   text-decoration: none;
   color: #000000;
   display: block;
-  padding-left: 0;
   font-weight: bold;
   color: #f2f2f2;
   transition: 0.3s background-color, 1s color;
@@ -47,6 +46,8 @@ body {
   color: #000000;
   font-weight: normal;
   cursor: default;
+  margin-right: -4px;
+  margin-left: -4px;
 }
 
 .nav a.active:hover {
@@ -60,37 +61,70 @@ body {
     width: 130px;
     height: 50px;
     line-height: 50px;
-    font-size: 1.0em;
+    font-size: 0.9em;
     display: inline-block;
-    margin-right: -4px;
+    margin-right: 0px;
+	margin-left: 0px;
 	text-align: center;
   } 
 }
 
+.floatme {
+  float: right;
+}
+
+.navbutton {
+  padding: 0px 0px;
+  cursor: pointer;
+  height: 25px;
+  width: 70px;
+  background-color: #ffd633;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 10px;
+  outline: none;
+}
+
+.navbutton:hover {
+  background-color: #ffe680;
+}
+
+.navbutton2 {
+  padding: 0px 0px;
+  cursor: pointer;
+  height: 25px;
+  width: 140px;
+  background-color: #ffd633;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 10px;
+  outline: none;
+}
+
+.navbutton2:hover {
+  background-color: #ffe680;
+}
+
 .col {
-  
-  margin: 30px;
+  padding: 15px;
+  line-height: 48px;
   column-count: 3;
 }
 
-.col ul {
-  list-style-type: none;
-}
-
-
 input[type=text], select {
-    width: 25%;
-    padding: 6px 6px;
-    margin: 8px 0;
+    width: 40%;
+    padding: 6px 10px;
+    margin: 8px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 	font-weight: normal;
+	text-align: left;
 }
 
-input[type=submit] {
-    width: 40%;
+input[value="Upload"] {
+    width: 10%;
     background-color: #23315c;
     color: white;
     padding: 14px 20px;
@@ -98,6 +132,67 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+input[value="Add Student"] {
+    float: right;
+    width: 85%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[value="Zero Hours"] {
+    width: 10%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[value="Move Up"] {
+    width: 10%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[value="Edit"] {
+    float: right;
+    width: 85%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[value="Delete All"] {
+    width: 10%;
+    background-color: #23315c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitfile {
+  float: right;
 }
 
 input[type=submit]:hover {

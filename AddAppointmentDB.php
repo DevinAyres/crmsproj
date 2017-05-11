@@ -25,9 +25,9 @@ print($e->getMessage());
 if ($_POST['protocol'] === 'edit')
 {
 $delete = $db->prepare("delete from Appointments where ID = :id and Date = :date");
-$delete->execute(array(':id'=> $_POST['id'], ':date'=> $_POST['date']));
+$delete->execute(array(':id'=> $_POST['id'], ':date'=> $_POST['realDate']));
 }
-$query = "Insert into Appointments values (?, ?, ?, ?, ?)"; 
+$query = "Insert into Appointments(Date, ID, Reason, advisor, checked) values (?, ?, ?, ?, ?)"; 
 
 $stmt = $db->prepare($query);
 if($stmt->execute(array($_POST["date"], $_POST["id"], $_POST["reason"], $_POST["advisor"], $_POST["checked"])))

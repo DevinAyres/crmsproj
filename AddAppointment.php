@@ -41,12 +41,12 @@ $firstLast = explode(" ", $_POST["firstname"]);
 // Different operations to handle one or two names input
 if (count($firstLast) == 1)
 {
-$stmt = $db->prepare($query . " where FirstName LIKE :name or LastName LIKE :name");
+$stmt = $db->prepare($query . " where FirstName LIKE :name or LastName LIKE :name order by LastName asc");
 $stmt->execute(array(':name' => $firstLast[0] . "%"));
 }
 else if (count($firstLast) == 2)
 {
-$stmt = $db->prepare($query . " where FirstName LIKE :fname and LastName LIKE :lname");
+$stmt = $db->prepare($query . " where FirstName LIKE :fname and LastName LIKE :lname order by LastName asc");
 $stmt->execute(array(':fname' => $firstLast[0] . "%", ':lname' => $firstLast[1] . "%"));
 }
 

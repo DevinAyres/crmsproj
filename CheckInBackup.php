@@ -16,14 +16,17 @@ $results = $smt->fetchall();
 
 if ($_POST['protocol'] === 'delete')
 {
-$smt4 = $db->prepare("Delete from Appointments where ID = :id");
-$smt4->execute(array(':id'=> $_POST['idNumber']));
+$idDate = explode('|', $_POST['idNumber']);
+$smt4 = $db->prepare("Delete from Appointments where ID = :id and Date = :date");
+$smt4->execute(array(':id'=> $idDate[0], ':date'=> $idDate[1]));
 header("Refresh:0");
+print_r($idDate);
 }
 else if($_POST['protocol'] === 'checkIn')
 {
-$smt3 = $db->prepare("Update Appointments set checked = 'yes' where ID = :id");
-if (!$smt3->execute(array(':id'=> $_POST['idNumber'])))
+$idDate = explode('|', $_POST['idNumber']);
+$smt3 = $db->prepare("Update Appointments set checked = 'yes' where ID = :id and Date = :date");
+if (!$smt3->execute(array(':id'=> $idDate[0], ':date' => $idDate[1])))
 print_r($smt3->errorInfo());
 else
 header("Refresh:0");
@@ -36,11 +39,13 @@ header("Refresh:0; url=AddAppointment.php");
 function populateAppointments($results, $db)
 {
 $smt2 = $db->prepare("Select FirstName, LastName from MasterList where ID = :id");
+$idName = "";
 foreach ($results as $row)
 {
 $smt2->execute(array(':id'=> $row['ID']));
 $names = $smt2->fetch();
-echo "<tr><td><label><input type ='radio' name ='idNumber' id = 'idNumber' value = {$row['ID']} onclick='setID()'>{$row['Date']}</label></td><td>{$names['FirstName']} {$names['LastName']}</td><td>{$row['advisor']}</td><td>{$row['Reason']}</td>";
+$idName = $row['ID'] . "|" . $row['Date'];
+echo "<tr><td><label><input type ='radio' name ='idNumber' id = 'idNumber' value = '{$idName}' onclick='setID()'>{$row['Date']}</label></td><td>{$names['FirstName']} {$names['LastName']}</td><td>{$row['advisor']}</td><td>{$row['Reason']}</td>";
 if ($row['checked'] === 'yes')
 echo "<td><input type ='checkbox' disabled readonly checked></td></tr>";
 else
@@ -68,6 +73,7 @@ function setID()
 document.getElementById('idButton').value = document.querySelector('input[name="idNumber"]:checked').value;
 }
 </script>
+
 <body>
   <header>
     <div class = "nav">
